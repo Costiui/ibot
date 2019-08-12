@@ -32,7 +32,7 @@ let options = {
   aboutMessage: 'I was set up by dietricha, and my source code is at https://github.com/autonome/Stackbot',
 
   // if in debug mode, log everything
-  debug: false
+  debug: true
 };
 
 // Process any config parameters
