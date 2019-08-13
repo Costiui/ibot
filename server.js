@@ -57,14 +57,15 @@ log('feed url', feedURL)
 /****** END CONFIGURABLE BITS ******************/
 
 var irc = require('irc'),
-    client = new irc.Client(options.server, options.nick, { }),
     rooms = [options.channel],
     joined = false,
     queue = [],
     lastFeedCheck = null
 
+client = new irc.Client(options.server, options.nick, { });
+
 client.on('registered', function() {
-  log('bot registered on network')
+  log('bot registered on network', options.server)
   client.join(rooms[0], function() {
     log('bot joined room', rooms[0])
     client.say(rooms[0], options.joinMessage)
@@ -79,7 +80,7 @@ client.addListener('message' + rooms[0], function(from, message) {
 });
 
 client.addListener('error', function(message) {
-  log('error: ', message);
+  log('irc error: ', message);
 })
 
 function parseFeed(url) {
@@ -143,7 +144,7 @@ function notify(item) {
 }
 
 // Kickoff at script start
-parseFeed(feedURL)
+//parseFeed(feedURL)
 
 // Initiate feed check driver
 setInterval(function feedDriver() {
