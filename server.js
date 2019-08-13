@@ -54,7 +54,7 @@ Object.keys(options).forEach(key => {
 });
 
 let feedURL =
-  'https://stackoverflow.com/feeds/tag?sort=newest&tagnames='
+  'http://stackoverflow.com/feeds/tag?sort=newest&tagnames='
   + encodeURIComponent(options.tags.join(' or '));
 
 function log() {
@@ -62,7 +62,7 @@ function log() {
     console.log(...arguments)
 }
 
-//log('feed url', feedURL)
+log('feed url', feedURL)
 
 /****** END CONFIGURABLE BITS ******************/
 
@@ -115,7 +115,7 @@ function parseFeed(url) {
   req.on('response', function (res) {
     var stream = this;
 
-    log('feedparser: response')
+    log('feedparser: response', res.statusMessage)
 
     if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
 
@@ -160,9 +160,10 @@ function notify(item) {
   client.say(rooms[0], options.questionMessage + item.title + ' - ' + item.link)
 }
 
-/*
 // Kickoff at script start
-parseFeed(feedURL)
+setTimeout(() => {
+  parseFeed(feedURL)
+}, 5000);
 
 // Initiate feed check driver
 setInterval(function feedDriver() {
@@ -194,4 +195,3 @@ setInterval(() => {
   console.log('keepy uppy')
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
-*/
