@@ -5,14 +5,20 @@ let options = {
   // IRC server the bot will connect to
   server: 'irc.freenode.net',
 
+  // encrypt the connection
+  secure: true,
+  
   // channels the bot will join
   channel: '#dietrich',
 
   // name of the bot
   nick: 'ipfs-stackbot',
 
+  // usually same as nick. only required if you're registered
+  // on the server and are also sending password.
   userName: 'ipfs-stackbot',
   
+  // the password, if your nick is registered and you are logging in.
   password: '',
   
   // StackOverflow tags the bot will msg about
