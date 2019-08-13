@@ -56,7 +56,7 @@ function log() {
     console.log(...arguments)
 }
 
-log('feed url', feedURL)
+//log('feed url', feedURL)
 
 /****** END CONFIGURABLE BITS ******************/
 
@@ -68,8 +68,8 @@ var irc = require('irc'),
 
 let client = new irc.Client(options.server, options.nick, {
   sasl: true,
-  secure: true,
-  password: process.env.STACKBOT_PASSWORD
+  username: options.nick,
+  password: options.password
 });
 
 client.on('raw', log)
