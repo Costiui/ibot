@@ -73,8 +73,8 @@ var irc = require('irc'),
     lastFeedCheck = null
 
 let client = new irc.Client(options.server, options.nick, {
-  sasl: true,
-  userName: options.nick,
+  sasl: !!options.password,
+  userName: options.userName,
   password: options.password,
   debug: options.debug
 });
