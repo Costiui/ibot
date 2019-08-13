@@ -163,10 +163,9 @@ function notify(item) {
 }
 
 // Kickoff at script start
-setTimeout(() => {
-  parseFeed(feedURL)
-}, 5000);
+parseFeed(feedURL)
 
+/*
 // Initiate feed check driver
 setInterval(function feedDriver() {
   log('feed driver')
@@ -197,3 +196,4 @@ setInterval(() => {
   console.log('keepy uppy')
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
+*/
