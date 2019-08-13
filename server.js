@@ -54,7 +54,7 @@ Object.keys(options).forEach(key => {
 });
 
 let feedURL =
-  'http://stackoverflow.com/feeds/tag?sort=newest&tagnames='
+  'https://stackoverflow.com/feeds/tag?sort=newest&tagnames='
   + encodeURIComponent(options.tags.join(' or '));
 
 function log() {
@@ -72,6 +72,7 @@ var irc = require('irc'),
     queue = [],
     lastFeedCheck = null
 
+/*
 let client = new irc.Client(options.server, options.nick, {
   sasl: !!options.password,
   userName: options.userName,
@@ -85,7 +86,7 @@ client.on('registered', function() {
   log('bot registered on network', options.server)
   client.join(rooms[0], function() {
     log('bot joined room', rooms[0])
-    client.say(rooms[0], options.joinMessage)
+    //client.say(rooms[0], options.joinMessage)
     joined = true
   })
 })
@@ -99,6 +100,8 @@ client.addListener('message' + rooms[0], function(from, message) {
 client.addListener('error', function(message) {
   log('irc error: ', message);
 })
+
+*/
 
 function parseFeed(url) {
   var FeedParser = require('feedparser')
@@ -121,7 +124,6 @@ function parseFeed(url) {
 
     stream.pipe(feedparser);
   });
-
 
   feedparser.on('error', function(error) {
     // handle any feedparser errors
@@ -157,7 +159,7 @@ function onItem(item) {
 
 // Notify registered channels of item
 function notify(item) {
-  client.say(rooms[0], options.questionMessage + item.title + ' - ' + item.link)
+  //client.say(rooms[0], options.questionMessage + item.title + ' - ' + item.link)
 }
 
 // Kickoff at script start
