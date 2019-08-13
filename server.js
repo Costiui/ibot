@@ -1,9 +1,9 @@
 
+let tags = ['ipfs'];
 
 let feedURL =
-  'https://www.google.com';
-  //https://stackoverflow.com/feeds/tag?sort=newest&tagnames='
-  //+ encodeURIComponent(options.tags.join(' or '));
+  'https://stackoverflow.com/feeds/tag?sort=newest&tagnames='
+  + encodeURIComponent(tags.join(' or '));
 
 function log() {
   console.log(...arguments)
@@ -18,7 +18,6 @@ function parseFeed(url) {
   let req = request(url)
 
   req.on('error', function (error) {
-    // handle any request errors
     log('request error', error)
   });
 
@@ -32,3 +31,5 @@ function parseFeed(url) {
   });
 
 }
+
+parseFeed(feedURL)
