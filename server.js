@@ -68,11 +68,12 @@ var irc = require('irc'),
 
 let client = new irc.Client(options.server, options.nick, {
   sasl: true,
-  username: options.nick,
-  password: options.password
+  userName: options.nick,
+  password: options.password,
+  debug: options.debug
 });
 
-client.on('raw', log)
+//client.on('raw', log)
 
 client.on('registered', function() {
   log('bot registered on network', options.server)
