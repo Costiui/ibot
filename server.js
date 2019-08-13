@@ -62,7 +62,9 @@ var irc = require('irc'),
     queue = [],
     lastFeedCheck = null
 
-client = new irc.Client(options.server, options.nick, { });
+let client = new irc.Client(options.server, options.nick, { });
+
+client.on('raw', log)
 
 client.on('registered', function() {
   log('bot registered on network', options.server)
@@ -143,8 +145,9 @@ function notify(item) {
   client.say(rooms[0], options.questionMessage + item.title + ' - ' + item.link)
 }
 
+/*
 // Kickoff at script start
-//parseFeed(feedURL)
+parseFeed(feedURL)
 
 // Initiate feed check driver
 setInterval(function feedDriver() {
@@ -159,7 +162,6 @@ setInterval(function queueDriver() {
     notify(queue.shift())
   }
 }, options.queueUpdateIntervalSecs * 1000)
-
 
 // Pingable page
 var express = require('express');
@@ -177,3 +179,4 @@ setInterval(() => {
   console.log('keepy uppy')
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
+*/
