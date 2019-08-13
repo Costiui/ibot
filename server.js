@@ -9,8 +9,12 @@ let options = {
   channel: '#dietrich',
 
   // name of the bot
-  nick: 'Stackbot',
+  nick: 'ipfs-stackbot',
 
+  userName: 'ipfs-stackbot',
+  
+  password: '',
+  
   // StackOverflow tags the bot will msg about
   tags: ['ipfs'],
 
@@ -62,7 +66,11 @@ var irc = require('irc'),
     queue = [],
     lastFeedCheck = null
 
-let client = new irc.Client(options.server, options.nick, { });
+let client = new irc.Client(options.server, options.nick, {
+  sasl: true,
+  secure: true,
+  password: process.env.STACKBOT_PASSWORD
+});
 
 client.on('raw', log)
 
