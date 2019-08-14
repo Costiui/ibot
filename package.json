@@ -13,7 +13,8 @@
     "express": "^4.16.4",
     "request": "^2.88.0",
     "irc": "^0.5.2",
-    "feedparser": "^2.2.9"
+    "feedparser": "^2.2.9",
+    "feed-to-irc-bot": "^1.0.0"
   },
   "engines": {
     "node": "8.x"
