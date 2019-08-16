@@ -77,4 +77,3 @@ Object.keys(botConfig).forEach(key => {
 });
 
 feedToIRC(botConfig);
-
