@@ -27,7 +27,7 @@ let botConfig = {
   secure: true,
 
   // channels the bot will join
-  channel: '#dietrich',
+  channel: '#ipfs-in-web-browsers',
 
   // name of the bot
   nick: 'ipfs-stackbot',
