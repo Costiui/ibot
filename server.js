@@ -91,5 +91,5 @@ var listener = app.listen(process.env.PORT, function () {
 // Keepy uppy
 const http = require('http');
 setInterval(() => {
-  http.get(`http://$}.glitch.me/`);
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
