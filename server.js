@@ -12,14 +12,10 @@ const feedToIRC = require('feed-to-irc-bot');
 // StackOverflow tags the bot will msg about
 let tags = ['ipfs'];
 
-/*
 // StackOverflow RSS feed for tags
 let feedURL =
   'https://stackoverflow.com/feeds/tag?sort=newest&tagnames='
   + encodeURIComponent(tags.join(' or '));
-*/
-
-let feedURL = 'https://infinite-rss.glitch.me?itemCount=1';
 
 // Bot config
 let botConfig = {
@@ -58,7 +54,7 @@ let botConfig = {
   joinMessage: "",
 
   // Message from bot prefixing a new SO question
-  itemMessagePrefix: "New question on StackOverflow: ",
+  itemMessagePrefix: "@dietricha New question on StackOverflow: ",
 
   // If someone speaks to the bot in the channel like 'nick: '
   aboutMessage: 'I was set up by dietricha, and my source code is at https://github.com/autonome/ipfs-stackbot',
