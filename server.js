@@ -51,7 +51,7 @@ let botConfig = {
   msgSendIntervalSecs: 10,
 
   // Message from bot when joining a channel
-  joinMessage: "",
+  joinMessage: "@dietricha I went down again",
 
   // Message from bot prefixing a new SO question
   itemMessagePrefix: "@dietricha New question on StackOverflow: ",
