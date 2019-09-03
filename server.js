@@ -48,7 +48,7 @@ let botConfig = {
 
   // How often to check feeds, in minutes.
   // Defaults to once an hour.
-  feedUpdateIntervalMins: 1, //60,
+  feedUpdateIntervalMins: 60,
 
   // How often to msg the IRC channel, in seconds.
   // Defaults to every 10 seconds
