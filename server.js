@@ -27,7 +27,7 @@ let botConfig = {
   secure: true,
 
   // channels the bot will join
-  channel: '#dietrich',
+  channel: '#ipfs',
 
   // name of the bot
   nick: 'ipfs-stackbot',
@@ -51,16 +51,16 @@ let botConfig = {
   msgSendIntervalSecs: 10,
 
   // Message from bot when joining a channel
-  joinMessage: "@dietricha I went down again",
+  joinMessage: "",
 
   // Message from bot prefixing a new SO question
-  itemMessagePrefix: "@dietricha New question on StackOverflow: ",
+  itemMessagePrefix: "New IPFS question on StackOverflow: ",
 
   // If someone speaks to the bot in the channel like 'nick: '
   aboutMessage: 'I was set up by dietricha, and my source code is at https://github.com/autonome/ipfs-stackbot',
 
   // if in debug mode, log everything
-  debug: true
+  debug: false
 };
 
 // Process any environment parameters
