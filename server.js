@@ -10,7 +10,7 @@ for a given set of tags to an IRC channel.
 const feedToIRC = require('feed-to-irc-bot');
 
 // StackOverflow tags the bot will msg about
-let tags = ['ipfs'];
+let tags = ['libp2p'];
 
 // StackOverflow RSS feed for tags
 let feedURL =
@@ -21,16 +21,16 @@ let feedURL =
 let botConfig = {
 
   // IRC server the bot will connect to
-  server: 'irc.freenode.net',
+  server: 'irc.radioclick.ro',
 
   // encrypt the connection
   secure: true,
 
   // channels the bot will join
-  channel: '#ipfs',
+  channel: '#showchat',
 
   // name of the bot
-  nick: 'ipfs-stackbot',
+  nick: 'sbot',
 
   // usually same as nick. only required if you're registered
   // on the server and are also sending password.
@@ -51,16 +51,16 @@ let botConfig = {
   msgSendIntervalSecs: 10,
 
   // Message from bot when joining a channel
-  joinMessage: "",
+  joinMessage: "Hello Broo",
 
   // Message from bot prefixing a new SO question
-  itemMessagePrefix: "New IPFS question on StackOverflow: ",
+  itemMessagePrefix: "New libp2p question on StackOverflow: ",
 
   // If someone speaks to the bot in the channel like 'nick: '
   aboutMessage: 'I was set up by dietricha, and my source code is at https://github.com/autonome/ipfs-stackbot',
 
   // if in debug mode, log everything
-  debug: false
+  debug: true
 };
 
 // Process any environment parameters
